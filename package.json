@@ -20,7 +20,6 @@
     ".": "./index.js",
     "./package.json": "./package.json"
   },
-  "main": "./index.js",
   "module": "./index.js",
   "scripts": {
     "eslint-fix": "eslint --fix .",
