@@ -1,3 +1,7 @@
+# v0.1.3
+
+- Check if already initialized.
+
 # v0.1.2
 
 - Update global config name.

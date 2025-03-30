@@ -1,8 +1,7 @@
 const baseName = "click-to-component-browser";
+const version = "0.1.3";
 const targetName = `${baseName}-target`;
 const unknownComponentName = "Unknown Component";
-
-console.log(`[${baseName}] enabled`);
 
 // this funciton will update after popover is defined
 let hidePopover = function () {};
@@ -92,7 +91,6 @@ function getSourceCodeLocationString(sourceCodeLocation) {
 }
 
 function getElSourceCodeLocation(el) {
-  // __sourceCodeLocation (vue-click-to-component)
   const dataSourceCodeLocationStr = el?.dataset?.__sourceCodeLocation;
   if (dataSourceCodeLocationStr) {
     const sourceCodeLocation = parseSourceCodeLocation(
@@ -324,6 +322,7 @@ function initPopover() {
     box-sizing: border-box;
     max-width: 100%;
     margin: 0;
+    border: 1.5px solid currentColor;
   }`;
       document.head.appendChild(styleEl);
     }
@@ -533,20 +532,32 @@ button {
   );
 
   hidePopover = function () {
-    currentPopoverEl.hidePopover();
+    currentPopoverEl?.hidePopover?.();
   };
 }
 
-try {
-  initAltClick();
-} catch (error) {
-  console.warn(`[${baseName}] init failed`, error);
+function init() {
+  if (window.__CLICK_TO_COMPONENT_INIT__) {
+    return;
+  }
+
+  console.log(`[${baseName}] enabled`, { version });
+
+  try {
+    initAltClick();
+  } catch (error) {
+    console.warn(`[${baseName}] init failed`, error);
+  }
+
+  try {
+    initPopover();
+  } catch (error) {
+    console.warn(`[${baseName}] init popover failed`, error);
+  }
+
+  window.__CLICK_TO_COMPONENT_INIT__ = true;
 }
 
-try {
-  initPopover();
-} catch (error) {
-  console.warn(`[${baseName}] init popover failed`, error);
-}
+init();
 
-export {};
+export { version };

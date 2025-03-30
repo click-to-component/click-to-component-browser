@@ -1,4 +1,5 @@
-import "../index.js";
+import {version} from "../index.js";
+import pkg from "../package.json";
 
 describe("index", () => {
   beforeAll(() => {});
@@ -6,6 +7,10 @@ describe("index", () => {
   beforeEach(() => {});
 
   afterEach(() => {});
+
+  test("version should correct", ()=> {
+    expect(version).toBe(pkg.version);
+  })
 
   test("should defined popover element", () => {
     const ce = customElements.get("click-to-component-browser-popover");
