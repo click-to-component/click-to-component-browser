@@ -17,11 +17,10 @@
   "author": "Jufeng Zhang <zjffun@gmail.com>",
   "type": "module",
   "exports": {
-    ".": {
-      "default": "./index.js"
-    },
+    ".": "./index.js",
     "./package.json": "./package.json"
   },
+  "main": "./index.js",
   "module": "./index.js",
   "scripts": {
     "eslint-fix": "eslint --fix .",

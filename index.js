@@ -548,3 +548,5 @@ try {
 } catch (error) {
   console.warn(`[${baseName}] init popover failed`, error);
 }
+
+export {};
