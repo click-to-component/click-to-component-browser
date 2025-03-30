@@ -187,6 +187,7 @@ function openEditor(sourceCodeLocationStr) {
 
 function initAltClick() {
   const style = document.createElement("style");
+  style.setAttribute("key", `${baseName}-style`);
   style.textContent = `
 [${baseName}] * {
   pointer-events: auto !important;
@@ -302,7 +303,7 @@ function initPopover() {
   function getPopoverEl() {
     const popoverStyleElKey = `${popoverName}-style`;
     const popoverStyleEl = document.querySelector(
-      `[key='${popoverStyleElKey}']`,
+      `[key="${popoverStyleElKey}"]`,
     );
     if (!popoverStyleEl) {
       const styleEl = document.createElement("style");
