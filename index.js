@@ -130,7 +130,7 @@ function getElWithSourceCodeLocation(el) {
 }
 
 function getUrlByConfig(sourceCodeLocationStr) {
-  const config = window.__CLICK_TO_COMPONENT_BROWSER_EXTENSION_CONFIG__;
+  const config = window.__CLICK_TO_COMPONENT_CONFIG__;
   const configReplacements = config?.replacements;
 
   if (Array.isArray(configReplacements)) {
