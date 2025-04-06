@@ -21,6 +21,7 @@
     "./package.json": "./package.json"
   },
   "module": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "eslint-fix": "eslint --fix .",
     "prepublishOnly": "npm run test",

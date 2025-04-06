@@ -1,3 +1,7 @@
+# v0.1.4
+
+- Add types.
+
 # v0.1.3
 
 - Check if already initialized.
